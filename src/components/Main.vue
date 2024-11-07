@@ -99,7 +99,10 @@
       <div class="weather_msg">气象风险预警信息</div>
       <div class="weather_forecast">
         <div class="weather_area">{{store.sender}}</div>
-        <div class="weather_waring_title">{{store.title}}</div>
+        <div class="weather_waring_title">
+          <span>{{store.title}}</span>
+          <i :class='`qi-${store.waringIcon}`'></i>
+        </div>
         <div class="weather_waring_content">{{store.text}}</div>
         <div class="update">数据来源于：{{store.sources}}<br>更新时间：{{store.updateTime}}</div>
       </div>
@@ -507,12 +510,15 @@ const option2 = computed(()=>({
 .weather_waring_title{
   height: 50px;
   text-align: center;
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
 }
 .weather_waring_content{
   height: 100px;
 }
 .forecastWaring_Img{
-  margin-top: 200px;
+  margin-top: 150px;
   width: 100%;
 }
 .update{
@@ -537,5 +543,11 @@ const option2 = computed(()=>({
 }
 .weather_waring_title{
   font-size: 14px;
+  color: #bfbfbf;
+}
+i{
+  text-align: center;
+  color: black;
+  font-size: 50px;
 }
 </style>

@@ -45,6 +45,7 @@ const useMainStore = defineStore('main',{
         minutely_label:[],
         minutely_value:[],
         is_forecastRainShow:false,
+        waringIcon:''
     }),
     actions:{
         async nowWeather(){
@@ -154,10 +155,12 @@ const useMainStore = defineStore('main',{
                     this.sender='预警发布单位：暂无数据'
                     this.text='预警内容：暂无数据'
                     this.title='预警信息标题：暂无数据'
+                    this.waringIcon=''
                 }else {
                     this.sender=data['warning'][0]['sender']
                     this.text=data['warning'][0]['text']
                     this.title=data['warning'][0]['title']
+                    this.waringIcon=data['warning'][0]['type']
                 }
             }
         },
