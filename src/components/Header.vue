@@ -9,7 +9,7 @@
         size="small"
         @change="store.reset(store.value)"
     />
-    <h1 style="font-size: 32px">{{store.title}}</h1>
+    <div class="title">{{store.title}}</div>
     <el-dropdown>
     <span class="el-dropdown-link">
       菜单
@@ -41,13 +41,13 @@
           <span style="text-align: center;line-height: 180px">上传图片：</span>
           <el-upload
               class="avatar-uploader"
-              action="http://api.023runclub.com/base/img/"
+              action="https://api.023runclub.com/base/img/"
               :show-file-list="false"
               :on-success="handleAvatarSuccess"
               :before-upload="beforeAvatarUpload"
               name="imgURL"
           >
-            <img v-if="imageUrl" :src="imageUrl" class="avatar" />
+            <img v-if="imageUrl" :src="imageUrl" class="avatar" alt="加载失败"/>
             <el-icon v-else class="avatar-uploader-icon"><Plus /></el-icon>
           </el-upload>
         </div>
@@ -58,7 +58,7 @@
 
 <script setup>
 import useHeaderStore from "@/store/headerStore.js";
-import {onMounted, reactive, ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 import { ArrowDown } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 import { Plus } from '@element-plus/icons-vue'
@@ -109,11 +109,6 @@ watch(()=>mainStore.WBGTout,(newValue,oldValue)=>{
   colorChange()
   console.log(newValue)
 })
-
-
-// setInterval(()=>{
-//   add()
-// },5000)
 </script>
 
 <style scoped>
@@ -190,7 +185,16 @@ h1{
 .avatar-uploader .el-upload:hover {
   border-color: var(--el-color-primary);
 }
-
+.title{
+  font-size: 32px;
+  font-weight: 600;
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 80px;
+  height: 80px;
+  color: white;
+}
 .el-icon.avatar-uploader-icon {
   font-size: 28px;
   color: #8c939d;

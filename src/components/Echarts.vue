@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import * as echarts from 'echarts';
-import {onMounted, ref, watch, watchEffect} from "vue";
+import {onMounted, ref, watch} from "vue";
 const chart=ref()
 const props=defineProps({
   options:Object,

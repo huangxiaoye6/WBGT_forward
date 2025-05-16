@@ -444,11 +444,13 @@ const option2 = computed(()=>({
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  color: #f7511b;
 }
 .airInfo{
   width: 60px;
   margin-left: 5px;
   margin-top: 5px;
+  color: #7d8991;
 }
 .air_title{
   border-top: 2px solid #cfd0d5;
@@ -467,6 +469,7 @@ const option2 = computed(()=>({
   font-size: 100px;
   font-weight: bold;
   line-height: 120px;
+
 }
 .tem{
   height: 100px;
@@ -474,6 +477,7 @@ const option2 = computed(()=>({
   text-align: center;
   font-weight: bold;
   line-height: 100px;
+  color: #42b983;
 }
 .info{
   height: 50px;

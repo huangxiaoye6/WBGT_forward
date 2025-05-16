@@ -1,7 +1,7 @@
 import axios from "axios";
 import {ElMessage} from "element-plus";
 const requests = axios.create({
-    baseURL: 'http://api.023runclub.com',
+    baseURL: 'https://api.023runclub.com',
     timeout: 12000,
     headers: {'X-Custom-Header': 'foobar'}
 });
